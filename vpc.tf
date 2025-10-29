@@ -1,13 +1,13 @@
 resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "10.10.0.0/16"
   tags = {
     Name = "cmtr-zt9dp1hp-01-vpc"
   }
 }
 
 resource "aws_subnet" "publicA" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.10.1.0/24"
   availability_zone = "us-east-1a"
 
   tags = {
@@ -16,8 +16,8 @@ resource "aws_subnet" "publicA" {
 }
 
 resource "aws_subnet" "publicB" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.3.0/24"
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.10.3.0/24"
   availability_zone = "us-east-1b"
 
 
@@ -27,8 +27,8 @@ resource "aws_subnet" "publicB" {
 }
 
 resource "aws_subnet" "publicC" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.5.0/24"
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.10.5.0/24"
   availability_zone = "us-east-1c"
 
   tags = {
