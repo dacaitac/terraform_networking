@@ -1,30 +1,5 @@
-variable "region" {
-  description = "AWS region"
-  type        = string
-  default     = "us-east-1"
-}
-
-variable "vpc_cidr" {
-  description = "CIDR block for the VPC"
-  type        = string
-  default     = "10.10.0.0/16"
-}
-
-variable "subnets" {
-  description = "List of public subnets"
-  type = list(object({
-    name = string
-    az   = string
-    cidr = string
-  }))
-}
-
-variable "igw_name" {
-  description = "Internet Gateway name"
-  type        = string
-}
-
-variable "rt_name" {
-  description = "Route table name"
-  type        = string
+variable "instance_type" {
+  type        = string                     # The type of the variable, in this case a string
+  default     = "t2.micro"                 # Default value for the variable
+  description = "The type of EC2 instance" # Description of what this variable represents
 }
